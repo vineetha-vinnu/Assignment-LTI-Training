@@ -175,7 +175,7 @@ class ProducerControllerTest {
 	        MockHttpServletResponse mockHttpServletResponse = mvcResult.getResponse();
 	        String jsonOutput = mockHttpServletResponse.getContentAsString();
 
-	        assertThat(r).isEqualTo(jsonOutput);
+	        assertThat(HttpStatus.OK).isEqualTo(jsonOutput);
 	    }
 	private String converttoJson(Object ticket) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
