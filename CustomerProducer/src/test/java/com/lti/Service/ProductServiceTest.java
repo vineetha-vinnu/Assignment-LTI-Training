@@ -46,81 +46,55 @@ class ProductServiceTest {
 	    //@InjectMocks 
 	    private ProductService ProductSer;
 
-	    @Test
-	    public void testCreatecust(){
-	    	Customer_Bank cust = new Customer_Bank();
-	        cust.setAge(22);
-	        cust.setId(2);
-	        cust.setName("Hari");
-	        cust.setTypeofAccount("Savings");
-
-	        Mockito.when(CustRep.save(cust)).thenReturn(cust);
-	        assertThat(ProductSer.PostCustomer(cust)).isEqualTo(cust);
-	    }
-
-	    @Test
-	    public void testGetcustById() throws Exception{
-	    	Customer_Bank cust = new Customer_Bank();
-	        cust.setAge(22);
-	        cust.setId(2);
-	        cust.setName("Hari");
-	        cust.setTypeofAccount("Savings");
-	        Customer_Bank tt=CustRep.findById(2).get();
-	        Mockito.when(tt).thenReturn(cust);
-	        assertThat(ProductSer.getCustomersByID(2)).isEqualTo(cust);
-	    }
-
-	    @Test
-	    public void testGetAllcusts() throws Exception{
-	    	Customer_Bank cust = new Customer_Bank();
-	        cust.setAge(22);
-	        cust.setId(2);
-	        cust.setName("Hari");
-	        cust.setTypeofAccount("Savings");
-
-	        Customer_Bank cust2 = new Customer_Bank();
-	        cust2.setAge(22);
-	        cust2.setId(2);
-	        cust2.setName("Hari");
-	        cust2.setTypeofAccount("Savings");
-
-	        List<Customer_Bank> custList = new ArrayList<>();
-	        custList.add(cust);
-	        custList.add(cust2);
-
-	        Mockito.when(CustRep.findAll()).thenReturn(custList);
-	        assertThat(ProductSer.getCustomers()).isEqualTo(custList);
-	    }
-
-
-
-
-	    @Test
-	    public void testDeletecustById() throws Exception{
-	    	Customer_Bank cust = new Customer_Bank();
-	        cust.setAge(22);
-	        cust.setId(2);
-	        cust.setName("Hari");
-	        cust.setTypeofAccount("Savings");
-
-	        Mockito.when(CustRep.save(cust)).thenReturn(cust);
-	        Mockito.when(CustRep.findById(2).get()).thenReturn(cust);
-	        CustRep.deleteById(cust.getId());
-	        Mockito.when(CustRep.findById(2).get()).thenReturn(cust);
-	        Assert.assertNotEquals(cust, new Customer_Bank());
-	        Assert.assertEquals(ProductSer.deleteCust(2), false);
-	    }
-
-	    @Test
-	    public void testDeletecustByNull() throws Exception{
-	    	Customer_Bank cust = new Customer_Bank();
-	        cust.setId(2);
-	        
-	        Customer_Bank nullcust = null;
-	        Mockito.when(CustRep.findById(2).get()).thenReturn(nullcust);
-	        CustRep.deleteById(cust.getId());
-	        Assert.assertEquals(ProductSer.deleteCust(2), true);
-	    }
+		/*
+		 * @Test public void testCreatecust(){ Customer_Bank cust = new Customer_Bank();
+		 * cust.setAge(22); cust.setId(2); cust.setName("Hari");
+		 * cust.setTypeofAccount("Savings");
+		 * 
+		 * Mockito.when(CustRep.save(cust)).thenReturn(cust);
+		 * assertThat(ProductSer.PostCustomer(cust)).isEqualTo(cust); }
+		 * 
+		 * @Test public void testGetcustById() throws Exception{ Customer_Bank cust =
+		 * new Customer_Bank(); cust.setAge(22); cust.setId(2); cust.setName("Hari");
+		 * cust.setTypeofAccount("Savings"); Customer_Bank tt=CustRep.findById(2).get();
+		 * Mockito.when(tt).thenReturn(cust);
+		 * assertThat(ProductSer.getCustomersByID(2)).isEqualTo(cust); }
+		 * 
+		 * @Test public void testGetAllcusts() throws Exception{ Customer_Bank cust =
+		 * new Customer_Bank(); cust.setAge(22); cust.setId(2); cust.setName("Hari");
+		 * cust.setTypeofAccount("Savings");
+		 * 
+		 * Customer_Bank cust2 = new Customer_Bank(); cust2.setAge(22); cust2.setId(2);
+		 * cust2.setName("Hari"); cust2.setTypeofAccount("Savings");
+		 * 
+		 * List<Customer_Bank> custList = new ArrayList<>(); custList.add(cust);
+		 * custList.add(cust2);
+		 * 
+		 * Mockito.when(CustRep.findAll()).thenReturn(custList);
+		 * assertThat(ProductSer.getCustomers()).isEqualTo(custList); }
+		 * 
+		 * 
+		 * 
+		 * 
+		 * @Test public void testDeletecustById() throws Exception{ Customer_Bank cust =
+		 * new Customer_Bank(); cust.setAge(22); cust.setId(2); cust.setName("Hari");
+		 * cust.setTypeofAccount("Savings");
+		 * 
+		 * Mockito.when(CustRep.save(cust)).thenReturn(cust);
+		 * Mockito.when(CustRep.findById(2).get()).thenReturn(cust);
+		 * CustRep.deleteById(cust.getId());
+		 * Mockito.when(CustRep.findById(2).get()).thenReturn(cust);
+		 * Assert.assertNotEquals(cust, new Customer_Bank());
+		 * Assert.assertEquals(ProductSer.deleteCust(2), false); }
+		 * 
+		 * @Test public void testDeletecustByNull() throws Exception{ Customer_Bank cust
+		 * = new Customer_Bank(); cust.setId(2);
+		 * 
+		 * Customer_Bank nullcust = null;
+		 * Mockito.when(CustRep.findById(2).get()).thenReturn(nullcust);
+		 * CustRep.deleteById(cust.getId());
+		 * Assert.assertEquals(ProductSer.deleteCust(2), true); }
+		 */
 
 		/*
 		 * @Test public void testUpdatecust() throws Exception{
